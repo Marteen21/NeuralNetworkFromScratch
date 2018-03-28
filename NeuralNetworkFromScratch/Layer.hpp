@@ -1,8 +1,10 @@
 #pragma once
 #include <vector>
 #include "Neuron.hpp"
+#include "Object.h"
+
 namespace znko {
-	class Layer
+	class Layer : Object
 	{
 	public:
 		std::vector<Neuron> neurons;

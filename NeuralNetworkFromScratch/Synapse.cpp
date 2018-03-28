@@ -2,12 +2,12 @@
 #include "Connection.hpp"
 
 namespace znko {
-	Connection::Connection()
+	Synapse::Synapse() : Object ()
 	{
 	}
 
 
-	Connection::~Connection()
+	Synapse::~Synapse()
 	{
 	}
 }

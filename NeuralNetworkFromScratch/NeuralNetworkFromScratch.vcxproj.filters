@@ -24,10 +24,13 @@
     <ClInclude Include="Neuron.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Connection.hpp">
+    <ClInclude Include="Layer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layer.hpp">
+    <ClInclude Include="Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Synapse.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,13 +41,16 @@
     <ClCompile Include="NeuralNetworkFromScratch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Connection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Neuron.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Synapse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -16,11 +16,21 @@ namespace znko {
 		return 1.0 - x * x;
 	}
 
-	Neuron::Neuron()
+	Neuron::Neuron() : Object ()
 	{
 	}
 
 	Neuron::~Neuron()
 	{
+	}
+
+	const std::vector<Synapse*>& Neuron::GetInboundConnections(void) const
+	{
+		return this->inboundConnections;
+	}
+
+	const std::vector<Synapse*>& Neuron::GetOutboundConnections(void) const
+	{
+		return this->outboundConnections;
 	}
 }

@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
-#include "Connection.hpp"
+#include "Synapse.hpp"
+#include "Object.h"
 
 namespace znko {
-	class Neuron
+	class Neuron : Object
 	{
 		//Static members
 	private:
@@ -13,13 +14,20 @@ namespace znko {
 		static double TransferFuncitonDerivative(double x);
 		//Class members
 	private:
-		//std::vector<Connection> outputConnections;
+		double outputValue;
+		double gradient;
+		std::vector<Synapse*> outboundConnections;
+		std::vector<Synapse*> inboundConnections;
 	public:
+		//Constructors and destructor
 		Neuron();
 		Neuron(const Neuron &source) = delete;
 		Neuron(const Neuron &&source) = delete;
 		Neuron operator=(const Neuron &source) = delete;
 		Neuron operator=(const Neuron &&source) = delete;
 		virtual ~Neuron();
+		//Setters and getters
+		const std::vector<Synapse*>& GetInboundConnections(void) const;
+		const std::vector<Synapse*>& GetOutboundConnections(void) const;
 	};
 }
