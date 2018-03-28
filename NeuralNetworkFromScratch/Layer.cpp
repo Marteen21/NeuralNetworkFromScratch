@@ -2,16 +2,16 @@
 #include "Layer.hpp"
 
 
-Layer::Layer()
+znko::Layer::Layer()
 {
 }
 
 
-Layer::~Layer()
+znko::Layer::~Layer()
 {
 }
 
-void Znko::Layer::UpdateOutputWeights(void)
+void znko::Layer::UpdateOutputWeights(void)
 {
 	for (unsigned n = 0; n < neurons.size(); n++) {
 		Neuron &neuron = neurons[n];

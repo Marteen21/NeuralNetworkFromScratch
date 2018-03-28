@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Connection.hpp"
 
-namespace Znko {
+namespace znko {
 	Connection::Connection()
 	{
 	}

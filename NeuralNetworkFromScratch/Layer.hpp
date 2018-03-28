@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "Neuron.hpp";
-namespace Znko {
+#include "Neuron.hpp"
+namespace znko {
 	class Layer
 	{
 	public:
@@ -9,6 +9,10 @@ namespace Znko {
 	public:
 		Layer();
 		virtual ~Layer();
+		Layer(const Layer &source) = delete;
+		Layer(const Layer &&source) = delete;
+		Layer operator=(const Layer &source) = delete;
+		Layer operator=(const Layer &&source) = delete;
 
 		void UpdateOutputWeights(void);
 	};
