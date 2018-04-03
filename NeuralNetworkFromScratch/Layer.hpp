@@ -16,6 +16,7 @@ namespace znko {
 		Layer operator=(const Layer &source) = delete;
 		Layer operator=(const Layer &&source) = delete;
 
-		void UpdateOutputWeights(void);
+		void UpdateInboundSynapseWeights(void);
+		void FeedForward(void);
 	};
 }

@@ -24,13 +24,33 @@ namespace znko {
 	{
 	}
 
-	const std::vector<Synapse*>& Neuron::GetInboundConnections(void) const
+	const std::vector<Synapse*>& Neuron::GetInboundConnectionsConst(void) const
 	{
 		return this->inboundConnections;
 	}
 
-	const std::vector<Synapse*>& Neuron::GetOutboundConnections(void) const
+	std::vector<Synapse*>& Neuron::GetInboundSynapses(void)
+	{
+		return this->inboundConnections;
+	}
+
+	const std::vector<Synapse*>& Neuron::GetOutboundConnectionsConst(void) const
 	{
 		return this->outboundConnections;
+	}
+
+	std::vector<Synapse*>& Neuron::GetOutboundSynaptics(void)
+	{
+		return this->outboundConnections;
+	}
+
+	double Neuron::GetOutputValue(void) const
+	{
+		return this->outputValue;
+	}
+
+	double Neuron::GetGradient(void) const
+	{
+		return this->gradient;
 	}
 }

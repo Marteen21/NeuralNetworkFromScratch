@@ -27,7 +27,16 @@ namespace znko {
 		Neuron operator=(const Neuron &&source) = delete;
 		virtual ~Neuron();
 		//Setters and getters
-		const std::vector<Synapse*>& GetInboundConnections(void) const;
-		const std::vector<Synapse*>& GetOutboundConnections(void) const;
+		const std::vector<Synapse*>&	GetInboundConnectionsConst (void) const;
+		std::vector<Synapse*>&			GetInboundSynapses (void);
+
+		const std::vector<Synapse*>&	GetOutboundConnectionsConst(void) const;
+		std::vector<Synapse*>&			GetOutboundSynaptics(void);
+
+		double							GetOutputValue(void) const;
+		double							GetGradient(void) const;
+	public:
+		static double GetEta(void) { return eta; }
+		static double GetAlpha(void) { return alpha; }
 	};
 }

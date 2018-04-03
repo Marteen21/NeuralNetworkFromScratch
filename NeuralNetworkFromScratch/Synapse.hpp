@@ -9,16 +9,23 @@ namespace znko {
 	private:
 		double weight;
 		double dWeight;
-		Neuron *source;
-		Neuron *target;
+		Neuron* presynapticNeuron;
+		Neuron* postsynapticNeuron;
 
 	public:
 		Synapse();
 		Synapse(const Synapse &source) = delete;
 		Synapse(const Synapse &&source) = delete;
+		virtual ~Synapse();
 		Synapse operator=(const Synapse &source) = delete;
 		Synapse operator=(const Synapse &&source) = delete;
-		virtual ~Synapse();
+
+		double GetDeltaWeight(void) const;
+		void AddWeight(const double deltaWeight);
+		void SetDeltaWeight(const double deltaWeight);
+
+		Neuron* GetPresynapticNeuron(void) const;
+		Neuron* GetPostsynapticNeuron(void) const;
 
 	};
 }
