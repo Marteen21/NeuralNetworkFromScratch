@@ -18,9 +18,9 @@ void znko::Layer::UpdateInboundSynapseWeights(void)
 		std::vector<Synapse*>& inboundSynapses = postsynapticNeuron.GetInboundSynapses();
 		for (std::vector<Synapse*>::iterator it = inboundSynapses.begin(); it != inboundSynapses.end(); ++it) {
 			Synapse* synapse = *it;
-			Neuron& presynapticNeuron = *(synapse->GetPostsynapticNeuron());
+			Neuron& presynapticNeuron = *(synapse->GetPresynapticNeuron());
 			const double oldDeltaWeight = synapse->GetDeltaWeight();
-			double newDeltaWeight =
+			const double newDeltaWeight =
 				// Individual input, magnified by the gradient and train rate:
 				Neuron::GetEta ()
 				* presynapticNeuron.GetOutputValue()
