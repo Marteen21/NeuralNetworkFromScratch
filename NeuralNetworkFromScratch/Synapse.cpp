@@ -15,6 +15,11 @@ namespace znko {
 		return this->dWeight;
 	}
 
+	double Synapse::GetWeight(void) const
+	{
+		return this->weight;
+	}
+
 	void Synapse::AddWeight(const double deltaWeight)
 	{
 		this->weight += deltaWeight;

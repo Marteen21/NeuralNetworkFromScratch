@@ -11,6 +11,16 @@ znko::Layer::~Layer()
 {
 }
 
+znko::Layer* znko::Layer::GetPreviousLayer(void) const
+{
+	return previousLayer;
+}
+
+znko::Layer* znko::Layer::GetNextLayer(void) const
+{
+	return nextLayer;
+}
+
 void znko::Layer::UpdateInboundSynapseWeights(void)
 {
 	for (unsigned n = 0; n < neurons.size(); n++) {
@@ -41,11 +51,16 @@ void znko::Layer::FeedForward(void)
 
 	// Sum the previous layer's outputs (which are our inputs)
 	// Include the bias node from the previous layer.
+	Layer* nextLayer = GetNextLayer();
+	for (unsigned i = 0; i < nextLayer->neurons.size(); i++) {
+		Neuron& nextLayerNeuron = nextLayer->neurons[i];
+		std::vector<Synapse*>& inboundSynapses = nextLayerNeuron.GetInboundSynapses();
+		for (unsigned j = 0; j < neurons.size(); j++) {
+			Neuron& neuron = neurons[j];
+			
+			//sum += neuron.GetOutputValue() * neuron.G
 
-	for (unsigned n = 0; n < neurons.size(); n++) {
-		Neuron& neuron = neurons[n];
-		//sum += neuron.GetOutputValue() * neuron.G
-
+		}
 	}
 	//for (unsigned n = 0; n < prevLayer.size(); ++n)
 	//{

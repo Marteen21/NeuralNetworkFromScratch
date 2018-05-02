@@ -8,6 +8,8 @@ namespace znko {
 	{
 	public:
 		std::vector<Neuron> neurons;
+		Layer* previousLayer;
+		Layer* nextLayer;
 	public:
 		Layer();
 		virtual ~Layer();
@@ -15,6 +17,9 @@ namespace znko {
 		Layer(const Layer &&source) = delete;
 		Layer operator=(const Layer &source) = delete;
 		Layer operator=(const Layer &&source) = delete;
+
+		Layer* GetPreviousLayer(void) const;
+		Layer* GetNextLayer(void) const;
 
 		void UpdateInboundSynapseWeights(void);
 		void FeedForward(void);

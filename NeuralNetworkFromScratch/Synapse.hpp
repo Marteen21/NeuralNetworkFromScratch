@@ -21,6 +21,7 @@ namespace znko {
 		Synapse operator=(const Synapse &&source) = delete;
 
 		double GetDeltaWeight(void) const;
+		double GetWeight(void) const;
 		void AddWeight(const double deltaWeight);
 		void SetDeltaWeight(const double deltaWeight);
 
